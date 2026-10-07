@@ -2,6 +2,8 @@ import express from 'express';
 
 const app = express();
 
+app.use(express.json());
+
 const tarefas = [
   {
     id: 1,
@@ -21,6 +23,14 @@ app.get('/', (req, res) => {
 
 app.get('/tarefas', (req, res) => {
   res.json(tarefas);
+});
+
+app.post('/tarefas', (req, res) => {
+  const novaTarefa = req.body;
+
+  tarefas.push(novaTarefa);
+
+  res.status(201).json(novaTarefa);
 });
 
 app.listen(3000, () => {
