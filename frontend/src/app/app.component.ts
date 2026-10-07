@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
 
   tarefas: any[] = [];
   novaTarefa: string = '';
+  tarefaEditandoId: number | null = null;
 
   constructor(private tarefaService: TarefaService) {}
 
@@ -19,31 +20,36 @@ export class AppComponent implements OnInit {
     });
   }
 
-  adicionarTarefa() {
+ adicionarTarefa() {
   this.tarefaService.adicionarTarefa(this.novaTarefa)
     .subscribe(() => {
+
+      this.novaTarefa = '';
+
       this.tarefaService.listarTarefas().subscribe((dados: any) => {
         this.tarefas = dados;
       });
     });
 }
 
-editarTarefa(id: number) {
-  this.tarefaService.editarTarefa(id, 'Tarefa editada')
-    .subscribe(() => {
-      this.tarefaService.listarTarefas().subscribe((dados: any) => {
-        this.tarefas = dados;
-      });
-    });
-}
+  editarTarefa(id: number) {
+    this.tarefaEditandoId = id;
+  }
 
-excluirTarefa(id: number) {
-  this.tarefaService.excluirTarefa(id)
-    .subscribe(() => {
-      this.tarefaService.listarTarefas().subscribe((dados: any) => {
-        this.tarefas = dados;
+  salvarEdicao(tarefa: any) {
+    this.tarefaService.editarTarefa(tarefa.id, tarefa.titulo)
+      .subscribe(() => {
+        this.tarefaEditandoId = null;
       });
-    });
-}
+  }
+
+  excluirTarefa(id: number) {
+    this.tarefaService.excluirTarefa(id)
+      .subscribe(() => {
+        this.tarefaService.listarTarefas().subscribe((dados: any) => {
+          this.tarefas = dados;
+        });
+      });
+  }
 
 }

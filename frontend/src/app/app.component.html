@@ -1,22 +1,66 @@
-<h1>Minhas tarefas</h1>
+<div class="container">
 
-<input
-  type="text"
-  [(ngModel)]="novaTarefa"
-  placeholder="Digite uma tarefa"
->
+  <h1>Minhas tarefas</h1>
 
-<button (click)="adicionarTarefa()">Adicionar tarefa</button>
+  <div class="form-tarefa">
+    <input
+      type="text"
+      [(ngModel)]="novaTarefa"
+      placeholder="Digite uma nova tarefa"
+    >
 
-<ul>
-  <li *ngFor="let tarefa of tarefas">
-    {{ tarefa.id }} - {{ tarefa.titulo }}
-    <button (click)="editarTarefa(tarefa.id)">
-      Editar
+    <button (click)="adicionarTarefa()">
+      Adicionar
     </button>
+  </div>
 
-    <button (click)="excluirTarefa(tarefa.id)">
-  Excluir
-</button>
-  </li>
-</ul>
+  <div class="lista-tarefas">
+
+    <div class="tarefa" *ngFor="let tarefa of tarefas">
+
+      <div class="descricao">
+
+        <span *ngIf="tarefaEditandoId !== +tarefa.id">
+          <strong>{{ tarefa.id }}</strong>
+          - {{ tarefa.titulo }}
+        </span>
+
+        <span *ngIf="tarefaEditandoId === +tarefa.id">
+          <strong>{{ tarefa.id }}</strong>
+          -
+
+          <input
+            type="text"
+            [(ngModel)]="tarefa.titulo"
+          >
+
+          <button (click)="salvarEdicao(tarefa)">
+            Salvar
+          </button>
+        </span>
+
+      </div>
+
+      <div class="acoes">
+
+        <button
+          class="btn-editar"
+          (click)="editarTarefa(tarefa.id)"
+        >
+          Editar
+        </button>
+
+        <button
+          class="btn-excluir"
+          (click)="excluirTarefa(tarefa.id)"
+        >
+          Excluir
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

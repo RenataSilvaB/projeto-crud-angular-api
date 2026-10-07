@@ -1,0 +1,110 @@
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-tarefa {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #1976d2;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #125ca8;
+  }
+}
+
+.lista-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.descricao {
+  font-size: 16px;
+
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 8px;
+  }
+
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+  }
+
+  button:hover {
+    background: #218838;
+  }
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-editar,
+.btn-excluir {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-editar {
+  background: #f0ad4e;
+}
+
+.btn-excluir {
+  background: #d9534f;
+}
+
+.btn-editar:hover {
+  background: #d99432;
+}
+
+.btn-excluir:hover {
+  background: #c9302c;
+}
