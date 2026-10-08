@@ -23,42 +23,36 @@ O projeto permite realizar operações de CRUD (Create, Read, Update e Delete) d
 - Postman
 - VS Code
 
-###Como executar o projeto
-1. Clonar o repositório
+##Como executar o projeto
+###1. Clonar o repositório
+```
 git clone URL_DO_REPOSITORIO
 cd Testando
-2. Executar o Back-End
+```
 
-Entre na pasta do backend:
+###2. Executar o Back-End,
 
+Entre na pasta do backend, instale as dependências e inicie o servidor:
+```
 cd backend
-
-Instale as dependências:
-
 npm install
-
-Inicie o servidor:
-
 npm run dev
-
+```
 A API será executada em:
-
+```
 http://localhost:3000
-3. Executar o Front-End
+```
+###3. Executar o Front-End
 
-Abra outro terminal na pasta do projeto e entre em:
-
+Abra outro terminal na pasta do projeto e entre na pasta `frontend`:
+```
 cd frontend
-
-Instale as dependências:
-
 npm install
-
-Execute o Angular:
-
 ng serve
+```
+Depois, acesse o endereço informado pelo Angular no terminal.
 
-Depois acesse o endereço informado pelo Angular no terminal.
+
 
 ###Funcionalidades
 - Listar tarefas
