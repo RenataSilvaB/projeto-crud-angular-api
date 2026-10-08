@@ -1,10 +1,10 @@
-##Projeto CRUD Angular + API
+## Projeto CRUD Angular + API
 
 Aplicação web desenvolvida para praticar a integração entre Front-End Angular e uma API REST desenvolvida com Node.js e Express.
 
 O projeto permite realizar operações de CRUD (Create, Read, Update e Delete) de tarefas.
 
-###Tecnologias
+### Tecnologias
 
 **Front-End**
 - Angular
@@ -23,14 +23,14 @@ O projeto permite realizar operações de CRUD (Create, Read, Update e Delete) d
 - Postman
 - VS Code
 
-##Como executar o projeto
-###1. Clonar o repositório
+## Como executar o projeto
+### 1. Clonar o repositório
 ```
 git clone URL_DO_REPOSITORIO
 cd Testando
 ```
 
-###2. Executar o Back-End,
+### 2. Executar o Back-End,
 
 Entre na pasta do backend, instale as dependências e inicie o servidor:
 ```
@@ -42,7 +42,7 @@ A API será executada em:
 ```
 http://localhost:3000
 ```
-###3. Executar o Front-End
+### 3. Executar o Front-End
 
 Abra outro terminal na pasta do projeto e entre na pasta `frontend`:
 ```
@@ -54,7 +54,7 @@ Depois, acesse o endereço informado pelo Angular no terminal.
 
 
 
-###Funcionalidades
+### Funcionalidades
 - Listar tarefas
 - Adicionar tarefas
 - Editar tarefas
